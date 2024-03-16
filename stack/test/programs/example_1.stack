@@ -1,0 +1,12 @@
+push 5;
+push 0;
+whilene {
+    pop;
+    dup;
+    push -1;
+    add;
+    push 0
+};
+pop
+
+# Output: [ 0 1 2 3 4 5 ]

@@ -1,0 +1,18 @@
+push 5;
+push 1;
+swap 1;
+push 0;
+whilene {
+    pop;
+    dup;
+    swap 2;
+    mul;
+    swap 1;
+    push -1;
+    add;
+    push 0
+};
+pop;
+pop
+
+# Output: [ 120 ]

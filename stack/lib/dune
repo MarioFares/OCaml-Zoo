@@ -1,0 +1,8 @@
+(library
+ (name stack)
+ (modules ast eval lexer parser))
+
+(menhir
+  (modules parser))
+
+(ocamllex lexer)

@@ -1,0 +1,15 @@
+push 5;
+push 0;
+swap 1;
+whilene {
+    swap 1;
+    dup;
+    swap 2;
+    swap 1;
+    push 1;
+    add;
+    swap 1
+};
+pop
+
+# Output: [ 5 4 3 2 1 0 ]
