@@ -1,0 +1,37 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Stack",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"name": "constant.numeric.integer",
+			"match": "\\b\\d+\\b"
+		},
+		{
+			"name": "punctuation.terminators",
+			"match": ";"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control",
+				"match": "\\b(pop|push|swap|dup|add|mul|whilene|skip)\\b"
+			}]
+		},
+		"comments":	{
+			"patterns": [
+				{
+					"name": "comment.line.number-sign",
+					"match": "#.*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.stack"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "ocaml-zoo",
+  "displayName": "OCaml Zoo",
+  "description": "Support for the languages of the OCaml Zoo.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "stack",
+      "aliases": ["Stack", "stack"],
+      "extensions": [".stack"],
+      "configuration": "./configurations/stack-configuration.json"
+    }],
+    "grammars": [{
+      "language": "stack",
+      "scopeName": "source.stack",
+      "path": "./syntaxes/stack.tmLanguage.json"
+    }]
+  }
+}
