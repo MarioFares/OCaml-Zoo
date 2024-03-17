@@ -1,4 +1,11 @@
 {
+exception LexerError of string
+
+let raise_error (lexbuf : Lexing.lexbuf) = 
+  let pos = lexbuf.lex_curr_p in
+  let msg = Printf.sprintf "Lexing error at line %d, character %d" pos.pos_lnum (pos.pos_cnum - pos.pos_bol + 1) in
+  raise (LexerError msg)
+
 let reserved_symbols = [ 
   ("while", Parser.WHILE);
   ("skip", Parser.SKIP);
@@ -43,3 +50,4 @@ rule token = parse
     | character (digit | character | '_')* { create_token lexbuf }
     | ":=" | ";" | "+" | "*" | "<" { create_token lexbuf }
     | eof { Parser.EOF }
+    | _ { raise_error lexbuf }
