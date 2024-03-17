@@ -1,6 +1,6 @@
 (library
  (name imp)
- (modules ast lexer parser))
+ (modules ast lexer parser eval))
 
 (menhir 
   (modules parser))
