@@ -8,6 +8,7 @@ let reserved_symbols = [
   ("true", Parser.TRUE);
   ("false", Parser.FALSE);
   ("do", Parser.DO);
+  ("end", Parser.END);
   (":=", Parser.ASSN);
   (";", Parser.SEMICOLON);
   ("+", Parser.PLUS);

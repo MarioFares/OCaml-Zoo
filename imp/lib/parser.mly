@@ -11,6 +11,7 @@
 %token ELSE 
 %token WHILE
 %token DO
+%token END
 %token TRUE
 %token FALSE
 %token PLUS 
@@ -29,8 +30,8 @@ com:
     | SKIP { Ast.Skip }
     | id=IDENTIFIER ASSN a=aexp { Ast.Assn (id, a) }
     | c1=com SEMICOLON c2=com { Ast.Seq (c1, c2) }
-    | IF b=bexp THEN c1=com ELSE c2=com { Ast.If (b, c1, c2) }
-    | WHILE b=bexp DO c=com { Ast.While (b, c) }
+    | IF b=bexp THEN c1=com ELSE c2=com END { Ast.If (b, c1, c2) }
+    | WHILE b=bexp DO c=com END { Ast.While (b, c) }
 
 aexp:
     | id=IDENTIFIER { Ast.Var (id) }
